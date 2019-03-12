@@ -23,6 +23,24 @@ for i in range(len(profits_losses) - 1):
 
 average_change = round(sum(monthly_change)/len(monthly_change), 2)
 
+max_increase_index = 0
+max_decrease_index = 0
+
+for i in range(1, len(monthly_change)):
+	if monthly_change[i] > monthly_change[max_increase_index]:
+		max_increase_index = i
+
+	if monthly_change[i] < monthly_change[max_decrease_index]:
+		max_decrease_index = i
+
+max_increase_amount = monthly_change[max_increase_index]
+max_decrease_amount = monthly_change[max_decrease_index]
+
+max_increase_month = dates[max_increase_index + 1]
+max_decrease_month = dates[max_decrease_index + 1]
+
 print(total_months)
 print(total)
 print(average_change)
+print(max_increase_month)
+print(max_decrease_month)
