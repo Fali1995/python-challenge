@@ -39,8 +39,10 @@ max_decrease_amount = monthly_change[max_decrease_index]
 max_increase_month = dates[max_increase_index + 1]
 max_decrease_month = dates[max_decrease_index + 1]
 
-print(total_months)
-print(total)
-print(average_change)
-print(max_increase_month)
-print(max_decrease_month)
+print("Financial Analysis")
+print("----------------------------")
+print(f"Total Months {total_months}")
+print(f"Total: ${total}")
+print(f"Average Change ${average_change}")
+print(f"Greatest Increase in Profits: {max_increase_month} (${max_increase_amount})")
+print(f"Greatest Increase in Profits: {max_decrease_month} (${max_decrease_amount})")
