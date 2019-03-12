@@ -41,8 +41,19 @@ max_decrease_month = dates[max_decrease_index + 1]
 
 print("Financial Analysis")
 print("----------------------------")
-print(f"Total Months {total_months}")
+print(f"Total Months: {total_months}")
 print(f"Total: ${total}")
-print(f"Average Change ${average_change}")
+print(f"Average Change: ${average_change}")
 print(f"Greatest Increase in Profits: {max_increase_month} (${max_increase_amount})")
-print(f"Greatest Increase in Profits: {max_decrease_month} (${max_decrease_amount})")
+print(f"Greatest Decrease in Profits: {max_decrease_month} (${max_decrease_amount})")
+
+output_path = 'Output/results.txt'
+
+with open(output_path, 'w') as handler:
+	handler.write("Financial Analysis \n")
+	handler.write("---------------------------- \n")
+	handler.write(f"Total Months: {total_months} \n")
+	handler.write(f"Total: ${total} \n")
+	handler.write(f"Average Change: ${average_change} \n")
+	handler.write(f"Greatest Increase in Profits: {max_increase_month} (${max_increase_amount}) \n")
+	handler.write(f"Greatest Decrease in Profits: {max_decrease_month} (${max_decrease_amount}) \n")
