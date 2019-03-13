@@ -24,7 +24,7 @@ print(f"Total Votes: {total_votes}")
 print("-------------------------")
 
 for candidate in candidate_votes.keys():
-	print(f"{candidate}: {round(100 * candidate_votes[candidate]/total_votes, 3)}% ({candidate_votes[candidate]})")
+	print(f"{candidate}: {format(100 * candidate_votes[candidate]/total_votes, '.3f')}% ({candidate_votes[candidate]})")
 
 	if highest_votes < candidate_votes[candidate]:
 		highest_votes = candidate_votes[candidate]
@@ -43,7 +43,7 @@ with open(output_path, 'w') as handler:
 	handler.write("------------------------- \n")
 
 	for candidate in candidate_votes.keys():
-		handler.write(f"{candidate}: {round(100 * candidate_votes[candidate]/total_votes, 3)}% ({candidate_votes[candidate]}) \n")
+		handler.write(f"{candidate}: {format(100 * candidate_votes[candidate]/total_votes, '.3f')}% ({candidate_votes[candidate]}) \n")
 
 	handler.write("------------------------- \n")
 	handler.write(f"Winner: {winner} \n")
