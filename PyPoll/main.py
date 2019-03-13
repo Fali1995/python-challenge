@@ -15,4 +15,24 @@ with open(csv_path, newline = "") as handler:
 		else:
 			candidate_votes[row[2]] = 1
 
-print(candidate_votes)
+total_votes = sum(candidate_votes.values())
+highest_votes =  0
+
+print("Election Results")
+print("-------------------------")
+print(f"Total Votes: {total_votes}")
+print("-------------------------")
+
+for candidate in candidate_votes.keys():
+	print(f"{candidate}: {round(100 * candidate_votes[candidate]/total_votes, 3)}% ({candidate_votes[candidate]})")
+
+	if highest_votes < candidate_votes[candidate]:
+		highest_votes = candidate_votes[candidate]
+		winner = candidate
+
+print("-------------------------")
+print(f"Winner: {winner}")
+print("-------------------------")
+
+output_path = "Output/results.txt"
+
