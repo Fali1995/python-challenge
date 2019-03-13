@@ -36,3 +36,16 @@ print("-------------------------")
 
 output_path = "Output/results.txt"
 
+with open(output_path, 'w') as handler:
+	handler.write("Election Results \n")
+	handler.write("------------------------- \n")
+	handler.write(f"Total Votes: {total_votes} \n")
+	handler.write("------------------------- \n")
+
+	for candidate in candidate_votes.keys():
+		handler.write(f"{candidate}: {round(100 * candidate_votes[candidate]/total_votes, 3)}% ({candidate_votes[candidate]}) \n")
+
+	handler.write("------------------------- \n")
+	handler.write(f"Winner: {winner} \n")
+	handler.write("------------------------- \n")
+
